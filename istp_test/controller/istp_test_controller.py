@@ -12,12 +12,12 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'template', 'inclu
 
 from template.include.socket_server.utility.color_print import ColorPrinter
 
-llamaTestRouter = APIRouter()
+istpTestRouter = APIRouter()
 
 async def injectIstpTestService() -> IstpTestServiceImpl:
     return IstpTestServiceImpl(UserDefinedQueueRepositoryImpl.getInstance())
 
-@llamaTestRouter.get('/istp-test-result')
+@istpTestRouter.get('/istp-test-result')
 async def requestIstpTestResult(istpTestService: IstpTestServiceImpl =
                                  Depends(injectIstpTestService)):
 
