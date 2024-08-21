@@ -17,6 +17,7 @@ istpTestRouter = APIRouter()
 async def injectIstpTestService() -> IstpTestServiceImpl:
     return IstpTestServiceImpl(UserDefinedQueueRepositoryImpl.getInstance())
 
+# post라 적기
 @istpTestRouter.post('/istp-test-result')
 async def requestIstpTestResult(istpTestService: IstpTestServiceImpl =
                                  Depends(injectIstpTestService)):
