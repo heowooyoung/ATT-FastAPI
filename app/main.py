@@ -9,6 +9,10 @@ import uvicorn
 from dotenv import load_dotenv
 from fastapi import FastAPI
 
+# llm project용 router 추가
+from user_defined_initializer.init import UserDefinedInitializer
+from istp_test.controller.istp_test_controller import istpTestRouter
+
 from exponential_regression.controller.exponential_regression_controller import exponentialRegressionRouter
 
 # 내부 로직을 import 하여 사용할 때 아래 path를 인식시켜줘야함
@@ -24,6 +28,8 @@ from template.task_manager.manager import TaskManager
 
 DomainInitializer.initEachDomain()
 SystemInitializer.initSystemDomain()
+# 추가
+UserDefinedInitializer.initUserDefinedDomain()
 
 app = FastAPI()
 
@@ -43,6 +49,9 @@ app.include_router(deepLearningRouter)
 app.include_router(diceResultRouter)
 
 app.include_router(exponentialRegressionRouter)
+
+# 사용자 정의형 라우터들 등록
+app.include_router(istpTestRouter)
 
 if __name__ == "__main__":
     colorama.init(autoreset=True)
