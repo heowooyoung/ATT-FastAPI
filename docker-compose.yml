@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  app:
+    image: ghcr.io/${GITHUB_ACTOR}/att-fastapi-server:latest
+    container_name: fastapi
+    ports:
+      - 33333:33333
+    networks:
+      - app
+
+networks:
+  app:
+    driver: bridge
