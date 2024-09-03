@@ -21,3 +21,8 @@ class ChatbotFeedbackServiceImpl(ChatbotFeedbackService):
         userDefinedReceiverFastAPIChannel = self.__userDefinedQueueRepository.getUserDefinedSocketReceiverFastAPIChannel()
         ColorPrinter.print_important_data("userDefinedReceiverFastAPIChannel", userDefinedReceiverFastAPIChannel)
         return self.__chatbotFeedbackRepository.getResult(userDefinedReceiverFastAPIChannel)
+
+    def requestFinetuneWithFeedback(self):
+        userDefinedReceiverFastAPIChannel = self.__userDefinedQueueRepository.getUserDefinedSocketReceiverFastAPIChannel()
+        ColorPrinter.print_important_data("userDefinedReceiverFastAPIChannel", userDefinedReceiverFastAPIChannel)
+        return self.__chatbotFeedbackRepository.getResult(userDefinedReceiverFastAPIChannel)
