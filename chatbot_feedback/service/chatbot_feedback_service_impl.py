@@ -1,6 +1,7 @@
 import os
 import sys
 
+from chatbot_feedback.repository.chatbot_feedback_repository_impl import ChatbotFeedbackRepositoryImpl
 from chatbot_feedback.service.chatbot_feedback_service import ChatbotFeedbackService
 from user_defined_queue.repository.user_defined_queue_repository_impl import UserDefinedQueueRepositoryImpl
 
