@@ -4,6 +4,7 @@ import sys
 from fastapi import APIRouter, Depends, status
 from fastapi.responses import JSONResponse
 
+from chatbot_feedback.service.chatbot_feedback_service_impl import ChatbotFeedbackServiceImpl
 from user_defined_queue.repository.user_defined_queue_repository_impl import UserDefinedQueueRepositoryImpl
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'template'))
