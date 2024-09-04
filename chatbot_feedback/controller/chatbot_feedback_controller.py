@@ -26,3 +26,13 @@ async def requestChatbotFeedback(chatbotFeedbackService: ChatbotFeedbackServiceI
     getChatbotFeedback = chatbotFeedbackService.requestChatbotFeedback()
 
     return JSONResponse(content=getChatbotFeedback, status_code=status.HTTP_200_OK)
+
+@chatbotFeedbackRouter.post("/fine-tune-with-feedback")
+async def requestFinetuneWithFeedback(chatbotFeedbackService: ChatbotFeedbackServiceImpl =
+                                      Depends(injectChatbotFeedbackService)):
+
+    ColorPrinter.print_important_message("requestFinetuneWithFeedback()")
+
+    getFinetuneFeedback = chatbotFeedbackService.requestFinetuneWithFeedback()
+
+    return JSONResponse(content=getFinetuneFeedback, status_code=status.HTTP_200_OK)

@@ -9,6 +9,7 @@ import uvicorn
 from dotenv import load_dotenv
 from fastapi import FastAPI
 
+from chatbot_feedback.controller.chatbot_feedback_controller import chatbotFeedbackRouter
 from enfp_test.controller.enfp_test_controller import enfpTestRouter
 # llm project용 router 추가
 from user_defined_initializer.init import UserDefinedInitializer
@@ -54,6 +55,7 @@ app.include_router(exponentialRegressionRouter)
 # 사용자 정의형 라우터들 등록
 app.include_router(istpTestRouter)
 app.include_router(enfpTestRouter)
+app.include_router(chatbotFeedbackRouter)
 
 if __name__ == "__main__":
     colorama.init(autoreset=True)
