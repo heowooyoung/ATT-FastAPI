@@ -11,6 +11,7 @@ from fastapi import FastAPI
 
 from chatbot_feedback.controller.chatbot_feedback_controller import chatbotFeedbackRouter
 from enfp_test.controller.enfp_test_controller import enfpTestRouter
+from qna.controller.qna_controller import qnaRouter
 # llm project용 router 추가
 from user_defined_initializer.init import UserDefinedInitializer
 from istp_test.controller.istp_test_controller import istpTestRouter
@@ -56,6 +57,7 @@ app.include_router(exponentialRegressionRouter)
 app.include_router(istpTestRouter)
 app.include_router(enfpTestRouter)
 app.include_router(chatbotFeedbackRouter)
+app.include_router(qnaRouter)
 
 if __name__ == "__main__":
     colorama.init(autoreset=True)
