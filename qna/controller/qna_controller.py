@@ -37,3 +37,13 @@ async def requestLocationQnaResult(qnaService: QnaServiceImpl =
     generatedQnaResult = qnaService.requestQnaResult()
 
     return JSONResponse(content=generatedQnaResult, status_code=status.HTTP_200_OK)
+
+@qnaRouter.post('/menu-qna-result')
+async def requestLocationQnaResult(qnaService: QnaServiceImpl =
+                                 Depends(injectQnaService)):
+
+    ColorPrinter.print_important_message("requestQnaResult()")
+
+    generatedQnaResult = qnaService.requestQnaResult()
+
+    return JSONResponse(content=generatedQnaResult, status_code=status.HTTP_200_OK)
